@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Velocity 360" />
+	<meta name="description" content="Learn Full Stack React, Redux and Node" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One:300,400,500,600,700|Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://www.turbo360.co/dist/css/landing.min.css" type="text/css" />
+	<title>Blog | Turbo</title>
+</head>
+
+<body class="stretched side-header">
+	<div>
+		<div id="wrapper" class="clearfix">
+			<header id="header" class="no-sticky hidden-xs sidebar" style="padding-top:96px;background:#333">
+				<div id="header-wrap" style="background:#333">
+					<div class="container clearfix">
+						<a href="/">
+							<img src="https://d2t33r63549y14.cloudfront.net/landing-page-zejvaj/dist/images/canvasone-dark.png" />
+						</a>
+						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+						<hr />
+
+						<nav id="primary-menu">
+							<ul>
+								<li><a style="color:#fff" href="#user-content-scaffolding-projects"><div>Scaffolding Project</div></a></li>
+								<li><a style="color:#fff" href="#user-content-general-commands"><div>General Commands</div></a></li>
+								<li><a style="color:#fff" href="#user-content-turbo-sdk-commands"><div>Turbo SDK</div></a></li>
+								<li><a style="color:#fff" href="#user-content-theme-support"><div>Theme Support</div></a></li>
+								<li><a style="color:#fff" href="#user-content-questionscomments"><div>Questions / Comments</div></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<section id="content" style="background:#fff">
+				<div class="content-wrap">
+					<div class="col-md-offset-1 col_four_fifth">
+						<div class="container clearfix">
+
+							<div class="heading-block center nobottommargin">
+								<h1 style="font-family:Pathway Gothic One;font-weight:200">Datastore</h1>
+							</div>
+
+<article class="markdown-body entry-content" itemprop="text">
+
+<h2><a id="user-content-scaffolding-projects" class="anchor" href="#scaffolding-projects" aria-hidden="true"></a>Introduction</h2>
+<p>Turbo scaffolds projects in three ways:</p>
+<h3><a id="user-content-static-projects" class="anchor" href="#static-projects" aria-hidden="true"></a>Static Projects</h3>
+<pre><code>$ turbo new &lt;MY_PROJECT_NAME&gt; --static
+$ cd &lt;MY_PROJECT_NAME&gt;
+$ npm install
+</code></pre>
+<ul>
+<li>Static projects consist of conventional HTML/CSS/JS.</li>
+<li>Included in assets are Bootstrap and JQuery.</li>
+<li>The index.html imports a few Javascript modules: vendor.min.js, turbo.min.js, app.min.js</li>
+<li>vendor.min.js is a minified bundle of imported Javascript files which can be found in the 'js' task in gulpfile.js</li>
+<li>turbo.min.js is the Turbo CDN which provides the core functionality of the Turbo platform such as adding users, creating entities, sending emails, adding blog posts, and more.</li>
+<li>app.min.js is a module with your custom functions. This is initially empty</li>
+<li>The gulpfile.js config defines the build tasks which concatenate and minify the assets to a 'dist' directory</li>
+</ul>
+<h4><a id="user-content-add-a-page-to-static-projects" class="anchor" href="#add-a-page-to-static-projects" aria-hidden="true"></a>Add a Page to Static Projects</h4>
+<pre><code>$ turbo page &lt;PAGE_NAME&gt;
+</code></pre>
+<ul>
+<li>This adds a new folder to the project called &lt;PAGE_NAME&gt; containing a single index.html file.</li>
+</ul>
+<h3><a id="user-content-reactredux-projects" class="anchor" href="#reactredux-projects" aria-hidden="true"></a>React/Redux Projects</h3>
+<pre><code>$ turbo new &lt;MY_PROJECT_NAME&gt;
+$ cd &lt;MY_PROJECT_NAME&gt;
+$ npm install
+</code></pre>
+<ul>
+<li>This scaffolds a project with REACT/REDUX configured</li>
+<li>The REACT/REDUX source code is in the 'src' directory</li>
+<li>A webpack.config.js file is included with some basic webpack configuration. Feel free to adjust as needed.</li>
+</ul>
+<h3><a id="user-content-react-with-express-projects" class="anchor" href="#react-with-express-projects" aria-hidden="true"></a>React With Express Projects</h3>
+<pre><code>$ turbo new &lt;MY_PROJECT_NAME&gt; --express
+$ cd &lt;MY_PROJECT_NAME&gt;
+$ npm install
+</code></pre>
+<ul>
+<li>This scaffolds a project with REACT/REDUX as well as an Express project.</li>
+<li>The Express project code is under the 'server' directory</li>
+<li>A webpack.config.js file is included with some basic webpack configuration. Feel free to adjust as needed.</li>
+</ul>
+<h3><a id="user-content-add-express-server-to-existing-projects" class="anchor" href="#add-express-server-to-existing-projects" aria-hidden="true"></a>Add Express Server to Existing Projects</h3>
+<pre><code>$ turbo server express
+</code></pre>
+<ul>
+<li>This adds an express server to existing projects</li>
+</ul>
+
+<hr />
+
+<h2><a id="user-content-general-commands" class="anchor" href="#general-commands" aria-hidden="true"></a>General Commands</h2>
+<h3><a id="user-content-run-dev-server" class="anchor" href="#run-dev-server" aria-hidden="true"></a>Run Dev Server</h3>
+<pre><code>$ turbo devserver
+</code></pre>
+<ul>
+<li>This runs a simple Express server and renders the root index.html from <a href="http://localhost:3000">http://localhost:3000</a></li>
+<li>For static projects, we recommend running the dev server throughout development because it accurately reflects the behavior of your site in deployment.</li>
+<li>We also recommend running "gulp" in a separate tab. This invokes the build process whenever you make changes to JS or CSS files.</li>
+<li>The dev server supports relative links for anchor tags. For example, href="/blog" works fine with the dev server running.</li>
+</ul>
+<h3><a id="user-content-build-the-project" class="anchor" href="#build-the-project" aria-hidden="true"></a>Build The Project</h3>
+<pre><code>$ npm run build
+</code></pre>
+<ul>
+<li>This packages the project assets and concatenates/minifies the imports into the 'dist' directory.</li>
+<li>IMPORTANT: This command should be executed before every deployment because the 'dist' directory gets deployed, NOT the assets</li>
+<li>The gulpfile.js is where the configuration for the build process is defined. Register your custom assets here to include them in the build sequence.</li>
+</ul>
+<h3><a id="user-content-link-to-turbo-project" class="anchor" href="#link-to-turbo-project" aria-hidden="true"></a>Link to Turbo Project</h3>
+<pre><code>$ turbo app &lt;APP_ID&gt;
+</code></pre>
+<ul>
+<li>This links your local project to the Turbo platform which is necessary for deployment</li>
+<li>To create a Turbo project, see here: <a href="https://www.turbo360.co/create">https://www.turbo360.co/create</a></li>
+<li>You can get the &lt;APP_ID&gt; from your app dashboard on <a href="https://www.turbo360.co">https://www.turbo360.co</a></li>
+</ul>
+<h3><a id="user-content-deploy-to-staging" class="anchor" href="#deploy-to-staging" aria-hidden="true"></a>Deploy to Staging</h3>
+<pre><code>$ turbo deploy
+</code></pre>
+<ul>
+<li>Deploys your site to the Turbo staging environment. The staging URL is accessible on the internet and can be viewed by anyone.</li>
+<li>When deploying updates, it may take a minute or two for the changes to take effect as we propagate your site to multiple servers</li>
+<li>IMPORTANT: To deploy, your app must be linked to a  Turbo project. To create a Turbo project, see here: <a href="https://www.turbo360.co/create">https://www.turbo360.co/create</a></li>
+<li>IMPORTANT: It is best practice to run "$ npm run build" before deploying in order to package assets and minify imports.</li>
+</ul>
+<h3><a id="user-content-deploy-to-production" class="anchor" href="#deploy-to-production" aria-hidden="true"></a>Deploy to Production</h3>
+<pre><code>$ turbo deploy --prod
+</code></pre>
+<ul>
+<li>Deploys your site to the Turbo production environment. IMPORTANT:  The production URL is NOT accessible on the internet and must be forwarded from a CNAME record in your DNS provider.</li>
+<li>When deploying updates, it may take a minute or two for the changes to take effect as we propagate your site to multiple servers</li>
+<li>IMPORTANT: To deploy, your app must be linked to a  Turbo project. To create a Turbo project, see here: <a href="https://www.turbo360.co/create">https://www.turbo360.co/create</a></li>
+<li>IMPORTANT: It is best practice to run "$ npm run build" before deploying in order to package assets and minify imports.</li>
+</ul>
+
+<hr />
+
+<h2><a id="user-content-turbo-sdk-commands" class="anchor" href="#turbo-sdk-commands" aria-hidden="true"></a>Turbo SDK</h2>
+<p>The Turbo library SDK comes in two forms:</p>
+<h3><a id="user-content-cdn" class="anchor" href="#deploy-to-production" aria-hidden="true"></a>CDN</h3>
+<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+</code></pre>
+<h3><a id="user-content-npm" class="anchor" href="#deploy-to-production" aria-hidden="true"></a>NPM</h3>
+<pre><code>$ npm install turbo360
+</code></pre>
+<ul>
+<li>IMPORTANT: In order to leverage the Turbo SDK, your project must be linked to an app on Turbo (<a href="https://www.turbo360.co/create">https://www.turbo360.co/create</a>). See "LINK TO TURBO PROJECT" above for instructions.</li>
+</ul>
+<p>The CDN is suited for conventional HTML/CSS with Javascript and JQuery. The NPM is best for robust client-side frameworks like React and Angular 2. Both come packaged with every scaffolded Turbo project and they provide the functionality for leveraging the Turbo platform.</p>
+<h3><a id="user-content-default-resources" class="anchor" href="#default-resources" aria-hidden="true"></a>Default Resources</h3>
+<ul>
+<li>By default, Turbo supports the following resources: USER, POST (blog posts), COMMENT</li>
+<li>Each resource comes with built-in attributes but you can add your own. For example, every USER entity has a 'username' attribute but if you want to add a 'nickname' field, you can do so by simply adding it as a parameter (with corresponding value) when creating new users. To see the built-in attributes, see here: <a href="https://www.turbo360.co/docs">https://www.turbo360.co/docs</a></li>
+</ul>
+<h4><a id="user-content-to-create-a-user" class="anchor" href="#to-create-a-user" aria-hidden="true"></a>To create a USER:</h4>
+<h4><a id="user-content-cdn" class="anchor" href="#cdn" aria-hidden="true"></a>CDN</h4>
+<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+
+Turbo({site_id:&lt;MY_APP_ID&gt;}).createUser(params, function(err, data){
+    if (err){
+      // handle error
+    }
+    else {
+      // handle success
+    }
+  }
+})
+</code></pre>
+<h4><a id="user-content-npm" class="anchor" href="#npm" aria-hidden="true"></a>NPM</h4>
+<pre><code>import turbo from 'turbo360'
+
+turbo({site_id:&lt;MY_APP_ID&gt;}).create('user', params)
+.then(data =&gt; {
+  // handle success
+})
+.catch(err =&gt; {
+  // handle error
+})
+</code></pre>
+<ul>
+<li>See here for full example: <a href="https://www.turbo360.co/docs">https://www.turbo360.co/docs</a></li>
+</ul>
+<p>Turbo also includes a full suite of User-based operations for user management:</p>
+<h4><a id="user-content-cdn-1" class="anchor" href="#cdn-1" aria-hidden="true"></a>CDN</h4>
+<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+
+Turbo({site_id:&lt;MY_APP_ID&gt;}).login(credentials, function(err, data){})
+Turbo({site_id:&lt;MY_APP_ID&gt;}).logout(function(err, data){})
+Turbo({site_id:&lt;MY_APP_ID&gt;}).currentUser(function(err, data){})
+</code></pre>
+<h4><a id="user-content-npm-1" class="anchor" href="#npm-1" aria-hidden="true"></a>NPM</h4>
+<pre><code>import turbo from 'turbo360'
+
+turbo({site_id:&lt;MY_APP_ID&gt;}).login(credentials).then(data =&gt; {}).catch(err =&gt; {})
+turbo({site_id:&lt;MY_APP_ID&gt;}).logout().then(data =&gt; {}).catch(err =&gt; {})
+turbo({site_id:&lt;MY_APP_ID&gt;}).currentUser().then(data =&gt; {}).catch(err =&gt; {})
+</code></pre>
+<h3><a id="user-content-custom-resources" class="anchor" href="#custom-resources" aria-hidden="true"></a>Custom Resources</h3>
+<p>Turbo supports custom resources as easily as the default ones. By simply specifying the resource name and its parameters when creating entities via the SDK, you can create as many resource types that your project requires.</p>
+<h4><a id="user-content-to-create-a-custom-resource-called-team" class="anchor" href="#to-create-a-custom-resource-called-team" aria-hidden="true"></a>To create a custom resource called TEAM:</h4>
+<h4><a id="user-content-cdn-2" class="anchor" href="#cdn-2" aria-hidden="true"></a>CDN</h4>
+<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+
+Turbo({site_id:&lt;MY_APP_ID&gt;}).create('team', params, function(err, data){
+    if (err){
+      // handle error
+    }
+    else {
+      // handle success
+    }
+  }
+})
+
+</code></pre>
+<h4><a id="user-content-npm-2" class="anchor" href="#npm-2" aria-hidden="true"></a>NPM</h4>
+<pre><code>import turbo from 'turbo360'
+
+turbo({site_id:&lt;MY_APP_ID&gt;}).create('team', params)
+.then(data =&gt; {
+   // handle success
+})
+.catch(err =&gt; {
+   // handle error
+})
+</code></pre>
+<p>-- See here for full example: <a href="https://www.turbo360.co/docs">https://www.turbo360.co/docs</a></p>
+<h3><a id="user-content-crud-operations" class="anchor" href="#crud-operations" aria-hidden="true"></a>CRUD Operations</h3>
+<p>Turbo supports the standard CRUD operations as you would expect from an API. The following are the primary operations:</p>
+<h4><a id="user-content-cdn-3" class="anchor" href="#cdn-3" aria-hidden="true"></a>CDN</h4>
+<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+
+Turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params, function(err, data){})
+Turbo({site_id:&lt;MY_APP_ID&gt;}).fetch(resourceName, params, function(err, data){})
+Turbo({site_id:&lt;MY_APP_ID&gt;}).fetchOne(resourceName, id, function(err, data){})
+Turbo({site_id:&lt;MY_APP_ID&gt;}).update(resource, originalEntity, updatedParams, function(err, data){})
+Turbo({site_id:&lt;MY_APP_ID&gt;}).remove(resourceName, originalEntity, function(err, data){})
+</code></pre>
+<h4><a id="user-content-npm-3" class="anchor" href="#npm-3" aria-hidden="true"></a>NPM</h4>
+<pre><code>import turbo from 'turbo360'
+
+turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params).then(data =&gt; {}).catch(err =&gt; {})
+turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params).then(data =&gt; {}).catch(err =&gt; {})
+turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params).then(data =&gt; {}).catch(err =&gt; {})
+turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params).then(data =&gt; {}).catch(err =&gt; {})
+</code></pre>
+
+<hr />
+<h2><a id="user-content-theme-support" class="anchor" href="#theme-support" aria-hidden="true"></a>Theme Support</h2>
+<p>Turbo supports a few html themes out of the box. To switch themes, from the root directory of a project:</p>
+<pre><code>$ turbo theme editorial
+</code></pre>
+<p>where 'editorial' is the theme name. Currently, Turbo supports the following themes: <a href="https://html5up.net/editorial">editorial</a>, <a href="https://html5up.net/prologue">prologue</a>, <a href="https://html5up.net/hyperspace">hyperspace</a>, stack. These themes are free and can be found on <a href="https://html5up.net/">HTML5UP</a>.</p>
+
+<hr />
+<h2><a id="user-content-questionscomments" class="anchor" href="#questionscomments" aria-hidden="true"></a>Questions/Comments</h2>
+<p>If you have any questions, comments or feedback, feel free to contact us at <a href="mailto:katrina@velocity360.io">katrina@velocity360.io</a></p>
+</article>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://www.turbo360.co/dist/js/vendor.min.js"></script>
+</body>
+
+</html>
