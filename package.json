@@ -26,7 +26,8 @@
     "index.html",
     "dist",
     "filestorage",
-    "datastore"
+    "datastore",
+    "theme"
   ],
   "app": "5920beabfa74760011d2dfad"
 }
