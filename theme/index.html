@@ -8,7 +8,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One:300,400,500,600,700|Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://www.turbo360.co/dist/css/landing.min.css" type="text/css" />
-	<title>File Storage | Turbo</title>
+	<title>Installing Themes | Turbo</title>
 </head>
 
 <body class="stretched side-header">
@@ -42,224 +42,133 @@
 						<div class="container clearfix">
 
 							<div class="heading-block center nobottommargin">
-								<h1 style="font-family:Pathway Gothic One;font-weight:200">File Storage</h1>
+								<h1 style="font-family:Pathway Gothic One;font-weight:200">Installing An HTML5 Theme</h1>
 							</div>
 
 <article class="markdown-body entry-content" itemprop="text">
 
-<h2><a id="user-content-scaffolding-projects" class="anchor" href="#scaffolding-projects" aria-hidden="true"></a>Introduction</h2>
-<p>Turbo scaffolds projects in three ways:</p>
-<h3><a id="user-content-static-projects" class="anchor" href="#static-projects" aria-hidden="true"></a>Static Projects</h3>
-<pre><code>$ turbo new &lt;MY_PROJECT_NAME&gt; --static
-$ cd &lt;MY_PROJECT_NAME&gt;
-$ npm install
-</code></pre>
-<ul>
-<li>Static projects consist of conventional HTML/CSS/JS.</li>
-<li>Included in assets are Bootstrap and JQuery.</li>
-<li>The index.html imports a few Javascript modules: vendor.min.js, turbo.min.js, app.min.js</li>
-<li>vendor.min.js is a minified bundle of imported Javascript files which can be found in the 'js' task in gulpfile.js</li>
-<li>turbo.min.js is the Turbo CDN which provides the core functionality of the Turbo platform such as adding users, creating entities, sending emails, adding blog posts, and more.</li>
-<li>app.min.js is a module with your custom functions. This is initially empty</li>
-<li>The gulpfile.js config defines the build tasks which concatenate and minify the assets to a 'dist' directory</li>
-</ul>
-<h4><a id="user-content-add-a-page-to-static-projects" class="anchor" href="#add-a-page-to-static-projects" aria-hidden="true"></a>Add a Page to Static Projects</h4>
-<pre><code>$ turbo page &lt;PAGE_NAME&gt;
-</code></pre>
-<ul>
-<li>This adds a new folder to the project called &lt;PAGE_NAME&gt; containing a single index.html file.</li>
-</ul>
-<h3><a id="user-content-reactredux-projects" class="anchor" href="#reactredux-projects" aria-hidden="true"></a>React/Redux Projects</h3>
-<pre><code>$ turbo new &lt;MY_PROJECT_NAME&gt;
-$ cd &lt;MY_PROJECT_NAME&gt;
-$ npm install
-</code></pre>
-<ul>
-<li>This scaffolds a project with REACT/REDUX configured</li>
-<li>The REACT/REDUX source code is in the 'src' directory</li>
-<li>A webpack.config.js file is included with some basic webpack configuration. Feel free to adjust as needed.</li>
-</ul>
-<h3><a id="user-content-react-with-express-projects" class="anchor" href="#react-with-express-projects" aria-hidden="true"></a>React With Express Projects</h3>
-<pre><code>$ turbo new &lt;MY_PROJECT_NAME&gt; --express
-$ cd &lt;MY_PROJECT_NAME&gt;
-$ npm install
-</code></pre>
-<ul>
-<li>This scaffolds a project with REACT/REDUX as well as an Express project.</li>
-<li>The Express project code is under the 'server' directory</li>
-<li>A webpack.config.js file is included with some basic webpack configuration. Feel free to adjust as needed.</li>
-</ul>
-<h3><a id="user-content-add-express-server-to-existing-projects" class="anchor" href="#add-express-server-to-existing-projects" aria-hidden="true"></a>Add Express Server to Existing Projects</h3>
-<pre><code>$ turbo server express
-</code></pre>
-<ul>
-<li>This adds an express server to existing projects</li>
-</ul>
+<h2><a id="user-content-scaffolding-projects" class="anchor" href="#" aria-hidden="true"></a>Introduction</h2>
+<p>While Turbo offers several built-in themes to use in your projects, you may want to install your own theme. This tutorial will show you how you can download and install a theme from <a href="https://html5up.net/" target="_blank">HTML5 UP</a> and use it in your project.</p>
 
-<hr />
+<p>This tutorial assumes that you have already set up a static Turbo project.</p>
 
-<h2><a id="user-content-general-commands" class="anchor" href="#general-commands" aria-hidden="true"></a>General Commands</h2>
-<h3><a id="user-content-run-dev-server" class="anchor" href="#run-dev-server" aria-hidden="true"></a>Run Dev Server</h3>
-<pre><code>$ turbo devserver
-</code></pre>
-<ul>
-<li>This runs a simple Express server and renders the root index.html from <a href="http://localhost:3000">http://localhost:3000</a></li>
-<li>For static projects, we recommend running the dev server throughout development because it accurately reflects the behavior of your site in deployment.</li>
-<li>We also recommend running "gulp" in a separate tab. This invokes the build process whenever you make changes to JS or CSS files.</li>
-<li>The dev server supports relative links for anchor tags. For example, href="/blog" works fine with the dev server running.</li>
-</ul>
-<h3><a id="user-content-build-the-project" class="anchor" href="#build-the-project" aria-hidden="true"></a>Build The Project</h3>
-<pre><code>$ npm run build
-</code></pre>
-<ul>
-<li>This packages the project assets and concatenates/minifies the imports into the 'dist' directory.</li>
-<li>IMPORTANT: This command should be executed before every deployment because the 'dist' directory gets deployed, NOT the assets</li>
-<li>The gulpfile.js is where the configuration for the build process is defined. Register your custom assets here to include them in the build sequence.</li>
-</ul>
-<h3><a id="user-content-link-to-turbo-project" class="anchor" href="#link-to-turbo-project" aria-hidden="true"></a>Link to Turbo Project</h3>
-<pre><code>$ turbo app &lt;APP_ID&gt;
-</code></pre>
-<ul>
-<li>This links your local project to the Turbo platform which is necessary for deployment</li>
-<li>To create a Turbo project, see here: <a href="https://www.turbo360.co/create">https://www.turbo360.co/create</a></li>
-<li>You can get the &lt;APP_ID&gt; from your app dashboard on <a href="https://www.turbo360.co">https://www.turbo360.co</a></li>
-</ul>
-<h3><a id="user-content-deploy-to-staging" class="anchor" href="#deploy-to-staging" aria-hidden="true"></a>Deploy to Staging</h3>
-<pre><code>$ turbo deploy
-</code></pre>
-<ul>
-<li>Deploys your site to the Turbo staging environment. The staging URL is accessible on the internet and can be viewed by anyone.</li>
-<li>When deploying updates, it may take a minute or two for the changes to take effect as we propagate your site to multiple servers</li>
-<li>IMPORTANT: To deploy, your app must be linked to a  Turbo project. To create a Turbo project, see here: <a href="https://www.turbo360.co/create">https://www.turbo360.co/create</a></li>
-<li>IMPORTANT: It is best practice to run "$ npm run build" before deploying in order to package assets and minify imports.</li>
-</ul>
-<h3><a id="user-content-deploy-to-production" class="anchor" href="#deploy-to-production" aria-hidden="true"></a>Deploy to Production</h3>
-<pre><code>$ turbo deploy --prod
-</code></pre>
-<ul>
-<li>Deploys your site to the Turbo production environment. IMPORTANT:  The production URL is NOT accessible on the internet and must be forwarded from a CNAME record in your DNS provider.</li>
-<li>When deploying updates, it may take a minute or two for the changes to take effect as we propagate your site to multiple servers</li>
-<li>IMPORTANT: To deploy, your app must be linked to a  Turbo project. To create a Turbo project, see here: <a href="https://www.turbo360.co/create">https://www.turbo360.co/create</a></li>
-<li>IMPORTANT: It is best practice to run "$ npm run build" before deploying in order to package assets and minify imports.</li>
-</ul>
+<p>Visit HTML5 UP and download a theme that you'd like to use. For this tutorial, we will use the <a href="https://html5up.net/landed" target="_blank">Landed theme</a>.</p>
 
-<hr />
+<img src="/dist/images/landed-theme.png" />
 
-<h2><a id="user-content-turbo-sdk-commands" class="anchor" href="#turbo-sdk-commands" aria-hidden="true"></a>Turbo SDK</h2>
-<p>The Turbo library SDK comes in two forms:</p>
-<h3><a id="user-content-cdn" class="anchor" href="#deploy-to-production" aria-hidden="true"></a>CDN</h3>
-<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
-</code></pre>
-<h3><a id="user-content-npm" class="anchor" href="#deploy-to-production" aria-hidden="true"></a>NPM</h3>
-<pre><code>$ npm install turbo360
-</code></pre>
-<ul>
-<li>IMPORTANT: In order to leverage the Turbo SDK, your project must be linked to an app on Turbo (<a href="https://www.turbo360.co/create">https://www.turbo360.co/create</a>). See "LINK TO TURBO PROJECT" above for instructions.</li>
-</ul>
-<p>The CDN is suited for conventional HTML/CSS with Javascript and JQuery. The NPM is best for robust client-side frameworks like React and Angular 2. Both come packaged with every scaffolded Turbo project and they provide the functionality for leveraging the Turbo platform.</p>
-<h3><a id="user-content-default-resources" class="anchor" href="#default-resources" aria-hidden="true"></a>Default Resources</h3>
-<ul>
-<li>By default, Turbo supports the following resources: USER, POST (blog posts), COMMENT</li>
-<li>Each resource comes with built-in attributes but you can add your own. For example, every USER entity has a 'username' attribute but if you want to add a 'nickname' field, you can do so by simply adding it as a parameter (with corresponding value) when creating new users. To see the built-in attributes, see here: <a href="https://www.turbo360.co/docs">https://www.turbo360.co/docs</a></li>
-</ul>
-<h4><a id="user-content-to-create-a-user" class="anchor" href="#to-create-a-user" aria-hidden="true"></a>To create a USER:</h4>
-<h4><a id="user-content-cdn" class="anchor" href="#cdn" aria-hidden="true"></a>CDN</h4>
-<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+<p>After you have unzipped the theme, you will want to open up two finder windows - one for your project and one for the theme. Navigate to the assets folder of your project: Project > Assets. Inside, you will see a number of folders that contain the assets used for styling your application. By default, Turbo comes with a selection of tools built in.</p>
 
-Turbo({site_id:&lt;MY_APP_ID&gt;}).createUser(params, function(err, data){
-    if (err){
-      // handle error
-    }
-    else {
-      // handle success
-    }
-  }
-})
-</code></pre>
-<h4><a id="user-content-npm" class="anchor" href="#npm" aria-hidden="true"></a>NPM</h4>
-<pre><code>import turbo from 'turbo360'
+<img src="/dist/images/turbo-assets.png">
 
-turbo({site_id:&lt;MY_APP_ID&gt;}).create('user', params)
-.then(data =&gt; {
-  // handle success
-})
-.catch(err =&gt; {
-  // handle error
-})
-</code></pre>
-<ul>
-<li>See here for full example: <a href="https://www.turbo360.co/docs">https://www.turbo360.co/docs</a></li>
-</ul>
-<p>Turbo also includes a full suite of User-based operations for user management:</p>
-<h4><a id="user-content-cdn-1" class="anchor" href="#cdn-1" aria-hidden="true"></a>CDN</h4>
-<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+<p>With the two windows open, go to each folder in the theme's assets folder and copy the contents to your project. For example, open the theme's CSS folder, copy the CSS files there, and paste them in your project's CSS folder. This should be relatively straight forward but there are some important caveats to make note of.</p>
 
-Turbo({site_id:&lt;MY_APP_ID&gt;}).login(credentials, function(err, data){})
-Turbo({site_id:&lt;MY_APP_ID&gt;}).logout(function(err, data){})
-Turbo({site_id:&lt;MY_APP_ID&gt;}).currentUser(function(err, data){})
-</code></pre>
-<h4><a id="user-content-npm-1" class="anchor" href="#npm-1" aria-hidden="true"></a>NPM</h4>
-<pre><code>import turbo from 'turbo360'
+<img src="/dist/images/css-folder-pre-theme.png">
 
-turbo({site_id:&lt;MY_APP_ID&gt;}).login(credentials).then(data =&gt; {}).catch(err =&gt; {})
-turbo({site_id:&lt;MY_APP_ID&gt;}).logout().then(data =&gt; {}).catch(err =&gt; {})
-turbo({site_id:&lt;MY_APP_ID&gt;}).currentUser().then(data =&gt; {}).catch(err =&gt; {})
-</code></pre>
-<h3><a id="user-content-custom-resources" class="anchor" href="#custom-resources" aria-hidden="true"></a>Custom Resources</h3>
-<p>Turbo supports custom resources as easily as the default ones. By simply specifying the resource name and its parameters when creating entities via the SDK, you can create as many resource types that your project requires.</p>
-<h4><a id="user-content-to-create-a-custom-resource-called-team" class="anchor" href="#to-create-a-custom-resource-called-team" aria-hidden="true"></a>To create a custom resource called TEAM:</h4>
-<h4><a id="user-content-cdn-2" class="anchor" href="#cdn-2" aria-hidden="true"></a>CDN</h4>
-<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+<img src="/dist/images/css-folder-post-theme.png">
 
-Turbo({site_id:&lt;MY_APP_ID&gt;}).create('team', params, function(err, data){
-    if (err){
-      // handle error
-    }
-    else {
-      // handle success
-    }
-  }
-})
+<p>In the theme's assets folder, notice that there is a folder for fonts. Our project folder does not have a fonts folder by default so you must copy the fonts folder from the theme over to the project.</p>
 
-</code></pre>
-<h4><a id="user-content-npm-2" class="anchor" href="#npm-2" aria-hidden="true"></a>NPM</h4>
-<pre><code>import turbo from 'turbo360'
+<img src="/dist/images/assets-folder-with-fonts.png">
 
-turbo({site_id:&lt;MY_APP_ID&gt;}).create('team', params)
-.then(data =&gt; {
-   // handle success
-})
-.catch(err =&gt; {
-   // handle error
-})
-</code></pre>
-<p>-- See here for full example: <a href="https://www.turbo360.co/docs">https://www.turbo360.co/docs</a></p>
-<h3><a id="user-content-crud-operations" class="anchor" href="#crud-operations" aria-hidden="true"></a>CRUD Operations</h3>
-<p>Turbo supports the standard CRUD operations as you would expect from an API. The following are the primary operations:</p>
-<h4><a id="user-content-cdn-3" class="anchor" href="#cdn-3" aria-hidden="true"></a>CDN</h4>
-<pre><code>&lt;script src="https://cdn.turbo360-dev.com/dist/turbo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+<p>Also notice that the theme has a folder called images in its root directory, but our project does not. In a Turbo project, the images folder is contained within the assets folder, not the root directory. So we must copy the images from the theme's images folder and paste them in our images folder which is contained within the assets folder.</p>
 
-Turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params, function(err, data){})
-Turbo({site_id:&lt;MY_APP_ID&gt;}).fetch(resourceName, params, function(err, data){})
-Turbo({site_id:&lt;MY_APP_ID&gt;}).fetchOne(resourceName, id, function(err, data){})
-Turbo({site_id:&lt;MY_APP_ID&gt;}).update(resource, originalEntity, updatedParams, function(err, data){})
-Turbo({site_id:&lt;MY_APP_ID&gt;}).remove(resourceName, originalEntity, function(err, data){})
-</code></pre>
-<h4><a id="user-content-npm-3" class="anchor" href="#npm-3" aria-hidden="true"></a>NPM</h4>
-<pre><code>import turbo from 'turbo360'
+<img src="/dist/images/assets-folder-with-images.png">
 
-turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params).then(data =&gt; {}).catch(err =&gt; {})
-turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params).then(data =&gt; {}).catch(err =&gt; {})
-turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params).then(data =&gt; {}).catch(err =&gt; {})
-turbo({site_id:&lt;MY_APP_ID&gt;}).create(resourceName, params).then(data =&gt; {}).catch(err =&gt; {})
-</code></pre>
+<p>Now we need to import our files into our <a href="http://gulpjs.com/" target="_blank">Gulp</a> file. Each Turbo project comes with a Gulp file with some default configurations. If you want to learn more about why you should use Gulp or what you can do with it, check out this <a href="https://css-tricks.com/gulp-for-beginners/" target="_blank">article</a>. You will see a number of Gulp tasks already written that do different things for the project. The first one to make note of is the task called 'css.' This task copies our CSS files, minifies them, concatenates them, and then outputs them to a specified destination. Notice that the destination specified for our CSS files is /dist/css. When Gulp runs, it takes our CSS files, applies the above-mentioned rules, and then puts them into the dist folder, which contains another folder called css inside. When your application is running, this is where the CSS is actually coming from. We need to list all of the CSS files that we are using in this task so that those stylesheets will actually be usable in our project.</p>
 
-<hr />
-<h2><a id="user-content-theme-support" class="anchor" href="#theme-support" aria-hidden="true"></a>Theme Support</h2>
-<p>Turbo supports a few html themes out of the box. To switch themes, from the root directory of a project:</p>
-<pre><code>$ turbo theme editorial
-</code></pre>
-<p>where 'editorial' is the theme name. Currently, Turbo supports the following themes: <a href="https://html5up.net/editorial">editorial</a>, <a href="https://html5up.net/prologue">prologue</a>, <a href="https://html5up.net/hyperspace">hyperspace</a>, stack. These themes are free and can be found on <a href="https://html5up.net/">HTML5UP</a>.</p>
+<img src="/dist/images/default-gulp-file.png">
+
+<p>Open up the unzipped theme in your text editor and go to the index.html page. At the top of your page where the CSS files are imported, note the order. That is the order you will want to use when you list the files in your Gulp file. Import the files in the order that you see them:</p>
+
+<img src="/dist/images/theme-index-html-css.png">
+
+<p>
+	<pre>
+		<code>
+		'./assets/css/bootstrap.css',
+		'./assets/css/main.css',
+		'./assets/css/ie9.css',
+		'./assets/css/ie8.css',
+		'./assets/css/font-awesome.min.css',
+		</code>
+	</pre>
+</p>
+
+<p>While you could get away with just importing the main.css file, it is safer to include them all. Now your 'css' Gulp task should look like this:</p>
+
+<img src="/dist/images/gulp-post-css.png">
+
+<p>Next, you will need to import the JavaScript files just like you did for the CSS. Again, take a look at the theme's index.html file to see what order the files are listed in. That is the order you will want to import them in the Gulp file.</p>
+
+<img src="/dist/images/theme-index-html-js.png">
+
+<p>And here is how it looks after:</p>
+
+<img src="/dist/images/gulp-post-js.png">
+
+<p>You will notice that we have replaced the original jquery file with a jquery.min file as it is best practice to use minified files when they are available to you.</p>
+
+<p>The next step for our Gulp file will be to set up a task for the fonts. Not all HTML5 UP themes use a font folder with additional fonts, but this theme does. Turbo does not have a font task in Gulp by default so it is necessary to add one.</p>
+
+<p>Here is what our Gulp file looks like with the font task:</p>
+
+<img src="/dist/images/gulp-post-fonts.png">
+
+<p>But be careful! If you look at what comes right below this 'copy-fonts' task that we have added, you will see we have a task called 'style' that just runs the 'css' task right now. Since we have just added the 'copy-fonts' task, we want to add that task to the 'style' task rather than adding it to the list at the bottom. When the 'style' task runs, every task that we have added to it will run. After you have added the 'copy-fonts' task to the 'style' task, your Gulp file should look like this:</p>
+
+<img src="/dist/images/gulp-style-fonts.png">
+
+<p>Finally, because this theme has a folder with images within the CSS folder, we will create one final task that we will bundle into our 'style' task. Again, not every theme will have this additional folder, but this theme does.</p>
+
+<img src="/dist/images/gulp-copy-css-images.png">
+
+<p>Now that we have all of our Gulp tasks set, we need to make an edit so that our fonts will work properly. Go to the main.css file in your assets directory. On line 2, you should see an import statement for the fonts. Either delete or comment out this line.</p>
+
+<img src="/dist/images/commented-out-fonts.png">
+
+<p>The next step is to get our theme code into our index.html file. If we haven't made any mistakes, our theme should show up when we run our devserver and it should look almost identical to the design on HTML5 UP. Note that the theme downloads do not include all photo assets that are shown on the demo site so your page will not look 100% like it. HTML5 UP usually includes placeholder images in their theme downloads instead. We also will need to adjust the file paths for the images as well, so until we do that, we will not see any images at all.</p>
+
+<p>The easiest way to get the code in there is to select everything within the body of the theme's index.html page and paste it in the body of the project. While you can also copy/paste the entire index.html page from the theme, you will need to remember to adjust both the CSS and JS paths in the head and at the bottom of the pages.</p>
+
+<p>If you copy/paste just what is in the body, make sure you remember to copy the class that is applied to the body in the theme.</p>
+
+<img src="/dist/images/pasted-theme-index-html.png">
+
+
+<p>Run the devserver in the root directory of the project by using the command:</p>
+
+
+<pre>
+<code>
+$ turbo devserver
+</code>
+</pre>
+
+<p>If everything worked properly, your theme should show up!</p>
+
+<img src="/dist/images/theme-no-images.png">
+
+<p>But you will notice that we need to make some adjustments as the images don't show up. As mentioned earlier, our Gulp file packages all of our assets up for us and puts them in the dist folder. So we need to point all of our images to that directory and specifically to the images folder within it.</p>
+
+<img src="/dist/images/dist-images.png">
+
+<p>After you change all of the img paths, make sure you check to see if any href paths point to images. In this theme, we fortunately do not have that issue but it may occur in other themes.</p>
+
+<p>If you refresh your page, you should now see the images have loaded.</p>
+
+<img src="/dist/images/theme-images.png">
+
+<p>Again, because the real images are not included, the theme will not look 100% like the demo site. You will need to supply your own images and if you do need some stock photos, you can use <a href="https://unsplash.com/" target="_blank">Unsplash</a>, which is actually where HTML5 UP gets its stock photos. Unsplash is a great resource for high-quality, royalty-free images.</p>
+
+<p>Additionally, the theme code may not have exactly the same elements that are used in the demo so don't worry if your project doesn't look exactly like the demo. Some of the themes include an elements page so you can see exactly what built-in elements are included.</p>
+
+<p>If you look at the demo theme, you will see a Layouts tab that shows different layouts for the theme. For this tutorial, we have only covered integrating the main index.html page but it is simple to include these other layouts. If you have different pages in your site or app, you can copy/paste the HTML for one of the layouts into that page. Change the file path references for the images and that should cover it. There is no need to modify your Gulp file. If you want to use one of the alternate layouts instead of the default one, simply copy/paste the HTML for that layout into index.html and change the file paths. That's it.</p>
+
+<p>Some themes, like Landed, include many elements that you can use for building your site or app. Others only include one page, which might be better for a landing page or a portfolio or a site for a small company or startup. Every HTML5 UP theme has a demo that you can play around with before downloading. This makes it easy to find a great looking theme for your Turbo project.</p>
+
+<p>Remember, you can always change the colors, fonts, and other attributes in your CSS to make the theme more customized for your project. </p>
+
+
 
 <hr />
 <h2><a id="user-content-questionscomments" class="anchor" href="#questionscomments" aria-hidden="true"></a>Questions/Comments</h2>

@@ -27,7 +27,8 @@
     "dist",
     "filestorage",
     "datastore",
-    "theme"
+    "theme",
+    "error.html"
   ],
   "app": "5920beabfa74760011d2dfad"
 }
